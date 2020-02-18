@@ -1,3 +1,5 @@
+require('dotenv').config();
+const { CTF_SPACE_ID, CTF_CDA_ACCESS_TOKEN } = process.env;
 
 export default {
   mode: 'spa',
@@ -28,6 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    'plugins/contentful'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -50,5 +53,9 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  env: {
+    CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN
   }
 }
